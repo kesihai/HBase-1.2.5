@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text / xsl" href="configuration.xsl"?>
+<configuration>
+	<property>
+		<name>hbase.cluster.distributed</name>
+		<value>true</value>
+	</property>
+	<!-- hdfs -->
+	<property>
+		<name>hbase.rootdir</name>
+		<value></value>
+	</property>
+	<!-- zookeeper -->
+	<property>
+		<name>zookeeper.znode.parent</name>
+		<value></value>
+	</property>
+	<property>
+		<name>hbase.zookeeper.property.clientPort</name>
+		<value>-1</value>
+	</property>
+	<property>
+		<name>hbase.zookeeper.quorum</name>
+		<value></value>
+	</property>
+	<property>
+		<name>zookeeper.session.timeout</name>
+		<value>40000</value>
+	</property>
+	<!-- read cache -->
+	<property>
+		<name>hfile.block.cache.size</name>
+		<value>0.2</value>
+	</property>
+	<property>
+		<name>hbase.bucketcache.combinedcache.enabled</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hbase.bucketcache.ioengine</name>
+		<value>offheap</value>
+	</property>
+	<property>
+		<name>hbase.bucketcache.size</name>
+		<value>2048</value>
+	</property>
+	<!-- write cache -->
+	<property>
+		<name>hbase.regionserver.global.memstore.size</name>
+		<value>0.6</value>
+	</property>
+	<property>
+		<name>hbase.hregion.memstore.block.multiplier</name>
+		<value>8</value>
+	</property>
+	<property>
+		<name>hbase.hstore.blockingStoreFiles</name>
+		<value>16</value>
+	</property>
+	<property>
+		<name>hbase.hregion.max.filesize</name>
+		<value>20480000000</value>
+	</property>
+	<!-- highly available read  -->
+	<property>
+		<name>hbase.region.replica.replication.enabled</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hbase.region.replica.replication.memstore.enabled</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hbase.region.replica.storefile.refresh.memstore.multiplier</name>
+		<value>4</value>
+	</property>
+	<property>
+		<name>hbase.region.replica.wait.for.primary.flush</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hbase.regionserver.storefile.refresh.period</name>
+		<value>0</value>
+	</property>
+	<!-- meta replica -->
+	<property>
+		<name>hbase.meta.replicas.use</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hbase.meta.replica.count</name>
+		<value>3</value>
+	</property>
+	<property>
+		<name>hbase.regionserver.meta.storefile.refresh.period</name>
+		<value>300000</value>
+	</property>
+	<property>
+		<name>hbase.master.hfilecleaner.ttl</name>
+		<value>3600000</value>
+	</property>
+	<!-- thrift server -->
+	<property>
+		<name>hbase.thrift.minWorkerThreads</name>
+		<value>64</value>
+	</property>
+	<!-- client config -->
+	<property>
+		<name>hbase.ipc.client.specificThreadForWriting</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>hbase.client.primaryCallTimeout.get</name>
+		<value>10000</value>
+	</property>
+	<property>
+		<name>hbase.client.primaryCallTimeout.multiget</name>
+		<value>10000</value>
+	</property>
+	<property>
+		<name>hbase.client.replicaCallTimeout.scan</name>
+		<value>1000000</value>
+	</property>
+	<property>
+		<name>dfs.client.hedged.read.threadpool.size</name>
+		<value>20</value>
+	</property>
+	<property>
+		<name>dfs.client.hedged.read.threshold.millis</name>
+		<value>30</value>
+	</property>
+	<!-- network -->
+	<property>
+		<name>hbase.regionserver.hostname</name>
+		<!--
+			This config is for experts: don’t set its value unless you really know what you are doing.
+			When set to a non-empty value, this represents the (external facing) hostname for the 
+			underlying server. See https://issues.apache.org/jira/browse/HBASE-12954 for details.
+		-->
+		<value>%COMPUTERNAME%</value>
+	</property>
+</configuration>
