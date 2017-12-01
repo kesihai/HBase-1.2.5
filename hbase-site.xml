@@ -104,7 +104,7 @@
 		<name>hbase.thrift.minWorkerThreads</name>
 		<value>64</value>
 	</property>
-	<!-- client config -->
+	<!-- client high available config -->
 	<property>
 		<name>hbase.ipc.client.specificThreadForWriting</name>
 		<value>true</value>
